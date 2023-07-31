@@ -37,7 +37,7 @@ export default function LandingPage({
       }}
       className="h-full w-full relative text-white"
     >
-      <AnimatePresence inital="false">
+      <AnimatePresence initial={false}>
         {loading && (
           <motion.div
             initial="hidden"
