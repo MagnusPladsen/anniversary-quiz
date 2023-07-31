@@ -7,8 +7,7 @@ export default function Ending({
   setStepper: React.Dispatch<React.SetStateAction<number>>;
 }) {
   const [codeStepper, setCodeStepper] = useState(0);
-  const [showHelp, setShowHelp] = useState(false);
-  const [countdown, setCountdown] = useState(10);
+ 
 
   const messages = [
     "1 ÅR SOM KJÆRESTER...",
