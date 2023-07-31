@@ -15,6 +15,7 @@ export default function Quiz({
     "Hva er det viktigste for meg?",
     "Hva elsker jeg mest med deg?",
     "Hva er favoritt turen min?",
+    "Er dette det beste spillet du noen ganger har spilt?",
   ];
 
   const answers = [
@@ -22,6 +23,7 @@ export default function Quiz({
     "At du har det bra",
     "ALT, absolutt alt",
     "Alicante",
+    "Ja!",
   ];
 
   const [choice, setChoice] = useState("");
@@ -213,6 +215,14 @@ export default function Quiz({
 
             <div className="flex flex-col gap-2 absolute bottom-48 mx-auto left-1/2 transform -translate-x-1/2 ">
               <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center `}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Smilet ditt
+              </div>
+              <div
                 className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
                 onClick={(e) => {
                   setChoice(answers[codeStepper - 1]);
@@ -220,14 +230,6 @@ export default function Quiz({
                 }}
               >
                 {answers[codeStepper - 1]}
-              </div>
-              <div
-                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center `}
-                onClick={(e) => {
-                  handleWrongChoice(e);
-                }}
-              >
-                Smilet ditt
               </div>
 
               <div
@@ -245,6 +247,126 @@ export default function Quiz({
                 }}
               >
                 Dupa dupa
+              </div>
+            </div>
+            <div
+              className={`w-[60vw] h-14 text-xl absolute bottom-28 mx-auto rounded left-1/2 transform -translate-x-1/2 cursor-pointer   ${
+                choice === ""
+                  ? "bg-gray-400 text-gray-700"
+                  : "bg-primary text-white"
+              }`}
+              onClick={() => {
+                if (choice !== "") {
+                  handleVerify();
+                }
+              }}
+            >
+              <div className="flex justify-center items-center h-full">
+                Neste
+              </div>
+            </div>
+          </>
+        )}
+        {codeStepper === 4 && (
+          <>
+            <h1 className="text-4xl pt-5 text-center">
+              {codeStepper + ": " + questions[codeStepper - 1]}
+            </h1>
+
+            <div className="flex flex-col gap-2 absolute bottom-48 mx-auto left-1/2 transform -translate-x-1/2 ">
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center `}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Budapest
+              </div>
+
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Oslo
+              </div>
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Sverige
+              </div>
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
+                onClick={(e) => {
+                  setChoice(answers[codeStepper - 1]);
+                  handleCorrectChoice(e);
+                }}
+              >
+                {answers[codeStepper - 1]}
+              </div>
+            </div>
+            <div
+              className={`w-[60vw] h-14 text-xl absolute bottom-28 mx-auto rounded left-1/2 transform -translate-x-1/2 cursor-pointer   ${
+                choice === ""
+                  ? "bg-gray-400 text-gray-700"
+                  : "bg-primary text-white"
+              }`}
+              onClick={() => {
+                if (choice !== "") {
+                  handleVerify();
+                }
+              }}
+            >
+              <div className="flex justify-center items-center h-full">
+                Neste
+              </div>
+            </div>
+          </>
+        )}
+        {codeStepper === 5 && (
+          <>
+            <h1 className="text-4xl pt-5 text-center">
+              {codeStepper + ": " + questions[codeStepper - 1]}
+            </h1>
+
+            <div className="flex flex-col gap-2 absolute bottom-48 mx-auto left-1/2 transform -translate-x-1/2 ">
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center `}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Nei
+              </div>
+
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Meh
+              </div>
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
+                onClick={(e) => {
+                  setChoice(answers[codeStepper - 1]);
+                  handleCorrectChoice(e);
+                }}
+              >
+                {answers[codeStepper - 1]}
+              </div>
+              <div
+                className={`w-[60vw] h-14 text-xl  rounded  cursor-pointer bg-white text-primary px-3 border-2 border-primary flex justify-center items-center`}
+                onClick={(e) => {
+                  handleWrongChoice(e);
+                }}
+              >
+                Njaaaa
               </div>
             </div>
             <div

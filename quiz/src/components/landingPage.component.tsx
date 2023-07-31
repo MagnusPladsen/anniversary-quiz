@@ -69,10 +69,7 @@ export default function LandingPage({
           Denne siden kan kun låses opp av min TRUE LOVE
         </p>
         <p className="text-xl">Start med å verifisere FACEID</p>
-        <p className="text-xl">
-          Deretter skriv inn riktige koder og svar riktig på alle spørsmålene i
-          QUIZen
-        </p>
+        <p className="text-xl">Deretter følg instruksene.</p>
       </div>
       <div
         className={`w-[60vw] h-14 text-xl absolute bottom-28 mx-auto rounded left-1/2 transform -translate-x-1/2 cursor-pointer bg-primary text-white`}
